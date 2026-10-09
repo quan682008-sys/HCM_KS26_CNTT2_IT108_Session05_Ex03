@@ -1,0 +1,34 @@
+﻿Bài 3 : Kiến trúc sư hạ tầng server chuyên nghiệp 
+Yêu cầu nghiệp vụ
+Tạo cây thư mục lồng nhau
+* mkdir smart-farm\data\logs, smart-farm\code . smart-farm\backup
+Tạo cùng lúc 3 file cấu hình:
+        touch smart-farm\config.json smart-farm\sensors.py  smart-farm\.env; (gi smart-farm\.env -Force).Attributes='Hidden' 
+
+
+Sao chép toàn bộ thư mục:
+* cp ~\smart-farm\code\*  .~\smart-farm\backup\code_v1 -Recurse  -Force
+
+
+Bản phác thảo sơ đồ luồng IPO của việc khởi tạo hạ tầng:
+   -   Input: (dữ liệu đầu vào)
+cây thư mục:
+smart-farm\data\logs , smart-farm\code
+3 file cấu hình: config.json, sensors.py, .env
+thư mục sao chép: smart-farm\code , backup\code_v1
+  -  Process:(xử lý)
+Lệnh mkdir tạo ra cây thư mục
+Lệnh touch và định dạng tệp “Attributes = Hidden” là “File” tạo ra tệp trong thư mục
+Lệnh Cp  và đường dẫn Path giúp xác định vị trí file và lệnh -Recurse để sao chép toàn bộ thư mục đang chọn đến thư mục cần đặt.
+   -  Output: (Đầu ra)
+cây thư mục tạo ra hoàn chỉnh
+file cấu hình được tạo ra
+thư mục  backup\code_v1 nhận được thư mục sao chép smart-farm\code
+Danh sách các câu lệnh PowerShell đã sử dụng: 
+mkdir
+touch
+-Recurse
+ Itemtype
+Force
+Cp
+Attributes
